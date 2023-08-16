@@ -1,30 +1,22 @@
+#include <stdlib.h>
 #include "function_pointers.h"
-
 /**
-  * int_index - Executes a given function
-  * @array: ...
-  * @size: The size of the array
-  * @action: Pointer to the used function
-  *
-  * Return: i
-  */
-int int_index(int *array, int size, int (*action)(int))
+ * array_iterator - execute function on each element
+ * of an array
+ * @array: given array
+ * @size: size of the array
+ * @action: pointer to function
+ * Return: void
+ */
+void array_iterator(int *array, size_t size, void (*action)(int))
 {
-	int i = 0;
+int i;
 
-	if (size > 0)
-	{
-		if (array != NULL && action != NULL)
-		{
-			while (i < size)
-			{
-				if (action(array[i]))
-					return (i);
+if (array == NULL || action == NULL)
+return;
 
-				i++;
-			}
-		}
-	}
-
-	return (-1);
+for (i = 0; i < (int) size; i++)
+{
+action(array[i]);
+}
 }
