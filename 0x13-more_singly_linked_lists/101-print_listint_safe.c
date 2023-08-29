@@ -3,7 +3,7 @@
 #include "lists.h"
 
 /**
- * check_listint - check if there is loop in a linked list and
+ * check_looped_listint - check if there is loop in a linked list and
  *            counts the number of unique nodes in a looped linked list
  * @head: A pointer to the head of the listint_t to check.
  *
@@ -11,7 +11,7 @@
  *         Otherwise - the number of unique nodes in the list.
  */
 
-size_t check_listint(const listint_t *head)
+size_t check_looped_listint(const listint_t *head)
 {
 	const listint_t *umwere, *chriss;
 	size_t nodes = 1;
